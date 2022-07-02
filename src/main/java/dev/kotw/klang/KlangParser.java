@@ -120,7 +120,6 @@ public class KlangParser {
     /**
      * numConclude - Concludes a number.
      * @return The number.
-     * @throws KlangException If an error occurs.
      */
     public int numConclude() {
         StringBuilder builder = new StringBuilder();
@@ -293,7 +292,13 @@ public class KlangParser {
      * An exception thrown by the KlangParser.
      */
     public static class KlangException extends Exception {
+        /**
+         * The message of the exception.
+         */
         private final String message;
+        /**
+         * The parser that threw the exception.
+         */
         private final KlangParser parser;
 
         /**
